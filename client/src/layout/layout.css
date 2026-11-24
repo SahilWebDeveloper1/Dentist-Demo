@@ -1,0 +1,531 @@
+/* Header */
+
+/* Sticky Wrapper — prevents horizontal overflow on any viewport */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: var(--dental-bg);
+  border-bottom: 1px solid var(--dental-border);
+  transition: box-shadow 0.28s ease, background-color 0.28s ease, border-color 0.28s ease;
+}
+
+.site-header--scrolled {
+  background-color: rgba(245, 248, 247, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 28px -8px rgba(18, 59, 74, 0.14);
+  border-bottom-color: rgba(18, 59, 74, 0.14);
+}
+
+/* Announcement Bar (10% Accent / 20% Primary contrast) */
+.announcement-bar {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  animation: slideDownFade 0.3s ease-out;
+}
+
+.announcement-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  box-shadow: 0 0 0 3px rgba(185, 220, 213, 0.25);
+}
+
+.announcement-link {
+  color: var(--dental-accent);
+  transition: opacity 0.2s ease;
+}
+
+.announcement-link:hover {
+  opacity: 0.85;
+}
+
+.announcement-close {
+  color: var(--dental-bg);
+  opacity: 0.75;
+}
+
+.announcement-close:hover {
+  opacity: 1;
+  background-color: rgba(245, 248, 247, 0.14);
+}
+
+/* Header Main Row */
+.header-inner {
+  min-height: 72px;
+  transition: min-height 0.25s ease;
+}
+
+.site-header--scrolled .header-inner {
+  min-height: 62px;
+}
+
+/* Brand Logo & Name */
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: var(--dental-accent);
+  color: var(--dental-primary);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.brand-link:hover .brand-mark {
+  transform: translateY(-1px) scale(1.03);
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+}
+
+.brand-name {
+  color: var(--dental-primary);
+}
+
+.brand-tagline {
+  color: rgba(18, 59, 74, 0.68);
+}
+
+/* Desktop Navigation Links */
+.nav-link {
+  position: relative;
+  color: var(--dental-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--dental-accent-soft);
+}
+
+.nav-link:hover::after,
+.nav-link--active::after {
+  transform: scaleX(1);
+}
+
+.nav-link--active {
+  font-weight: 600;
+  background-color: rgba(185, 220, 213, 0.24);
+}
+
+/* Treatments Dropdown Panel */
+.dropdown-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 248px;
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  border-radius: 14px;
+  box-shadow: 0 18px 36px -10px rgba(18, 59, 74, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.98);
+  transform-origin: top left;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 60;
+}
+
+.dropdown-panel--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.dropdown-item {
+  color: var(--dental-primary);
+  transition: background-color 0.18s ease, padding-left 0.18s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--dental-accent-soft);
+  padding-left: 20px;
+}
+
+.dropdown-item--active {
+  background-color: rgba(185, 220, 213, 0.45);
+  font-weight: 600;
+}
+
+.dropdown-badge {
+  background-color: var(--dental-accent);
+  color: var(--dental-primary);
+}
+
+/* Action Buttons (Phone, WhatsApp, CTA) */
+.action-phone {
+  color: var(--dental-primary);
+}
+
+.action-phone:hover {
+  background-color: var(--dental-accent-soft);
+}
+
+.action-whatsapp {
+  background-color: var(--dental-accent);
+  color: var(--dental-primary);
+}
+
+.action-whatsapp:hover {
+  transform: translateY(-1px) scale(1.05);
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+}
+
+.cta-button {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  box-shadow: 0 6px 16px -4px rgba(18, 59, 74, 0.28);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--dental-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px -6px rgba(18, 59, 74, 0.36);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile Toggle & Animated Hamburger */
+.mobile-toggle {
+  color: var(--dental-primary);
+  background-color: rgba(185, 220, 213, 0.35);
+}
+
+.mobile-toggle:hover {
+  background-color: var(--dental-accent);
+}
+
+.hamburger-icon {
+  position: relative;
+  width: 20px;
+  height: 14px;
+  display: inline-block;
+}
+
+.hamburger-icon span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: var(--dental-primary);
+  transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+}
+
+.hamburger-icon span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-icon span:nth-child(2) {
+  top: 6px;
+}
+
+.hamburger-icon span:nth-child(3) {
+  top: 12px;
+}
+
+.hamburger-icon--open span:nth-child(1) {
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.hamburger-icon--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon--open span:nth-child(3) {
+  top: 6px;
+  transform: rotate(-45deg);
+}
+
+/* Mobile Drawer */
+/* .mobile-drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  background-color: var(--dental-bg);
+  border-top: 1px solid transparent;
+  transition: grid-template-rows 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.mobile-drawer--open {
+  grid-template-rows: 1fr;
+  border-top-color: var(--dental-border);
+  box-shadow: 0 18px 32px -12px rgba(18, 59, 74, 0.2);
+}
+
+.mobile-drawer-inner {
+  min-height: 0;
+  max-height: calc(100dvh - 110px);
+  overflow-y: auto;
+} */
+
+.mobile-drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  background-color: var(--dental-bg);
+  border-top: 1px solid transparent;
+  transition: grid-template-rows 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.mobile-drawer--open {
+  grid-template-rows: 1fr;
+  border-top-color: var(--dental-border);
+  box-shadow: 0 18px 32px -12px rgba(18, 59, 74, 0.2);
+}
+
+.mobile-drawer-inner {
+  min-height: 0;
+  max-height: calc(100dvh - 110px);
+  overflow-y: hidden;
+}
+
+.mobile-drawer--open .mobile-drawer-inner {
+  overflow-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .mobile-drawer {
+    display: none;
+  }
+}
+
+.mobile-nav-item {
+  color: var(--dental-primary);
+  transition: background-color 0.18s ease;
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item--active {
+  background-color: var(--dental-accent-soft);
+}
+
+.mobile-sublist {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+  overflow: hidden;
+}
+
+.mobile-sublist--open {
+  grid-template-rows: 1fr;
+}
+
+.mobile-sublist > div {
+  min-height: 0;
+}
+
+.mobile-subitem {
+  color: var(--dental-primary);
+  transition: background-color 0.18s ease;
+}
+
+.mobile-subitem:hover,
+.mobile-subitem--active {
+  background-color: var(--dental-accent-soft);
+  font-weight: 600;
+}
+
+.mobile-actions {
+  border-top: 1px solid var(--dental-border);
+}
+
+.mobile-phone-btn {
+  background-color: var(--dental-accent);
+  color: var(--dental-primary);
+}
+
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .header-inner,
+  .brand-mark,
+  .nav-link::after,
+  .dropdown-panel,
+  .cta-button,
+  .hamburger-icon span,
+  .mobile-drawer,
+  .mobile-sublist {
+    transition: none;
+    animation: none;
+  }
+}
+
+
+/* Footer */
+
+:root {
+  --pearl-white: #FCFAF6;
+  --pale-eucalyptus: #DCEAE5;
+  --pale-eucalyptus-soft: rgba(220, 234, 229, 0.5);
+  --champagne-gold: #B99B72;
+  --gold-border: rgba(185, 155, 114, 0.36);
+  --gold-border-strong: rgba(185, 155, 114, 0.6);
+  --text-dark: #1F2624;
+  --text-muted: #525C59;
+  --text-dark-hover: #121716;
+}
+
+.site-footer {
+  background-color: var(--pale-eucalyptus-soft);
+  border-top: 1px solid var(--gold-border);
+  color: var(--text-dark);
+  overflow-x: clip;
+}
+
+/* Brand Mark & Name */
+.footer-brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border-strong);
+  transition: transform 0.22s ease, background-color 0.22s ease, border-color 0.22s ease;
+}
+
+.footer-brand:hover .footer-brand-mark {
+  transform: translateY(-1px);
+  background-color: var(--pale-eucalyptus);
+  border-color: var(--champagne-gold);
+}
+
+.footer-brand-name {
+  color: var(--text-dark);
+}
+
+.footer-brand-tagline {
+  color: var(--text-muted);
+}
+
+.footer-description {
+  color: var(--text-muted);
+}
+
+/* Social Media Buttons */
+.footer-social-btn {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-social-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--pale-eucalyptus);
+  border-color: var(--champagne-gold);
+}
+
+/* Section Headings & Links */
+.footer-heading {
+  color: var(--text-dark);
+}
+
+.footer-link {
+  color: var(--text-muted);
+  transition: color 0.18s ease, padding-left 0.18s ease;
+}
+
+.footer-link:hover {
+  color: var(--text-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Contact & Opening Hours Card */
+.footer-contact-card {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+}
+
+.footer-contact-icon {
+  color: var(--champagne-gold);
+}
+
+.footer-contact-text {
+  color: var(--text-muted);
+}
+
+.footer-whatsapp-btn {
+  background-color: var(--text-dark);
+  color: var(--pearl-white);
+  border: 1px solid var(--text-dark);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-whatsapp-btn:hover {
+  background-color: var(--text-dark-hover);
+  transform: translateY(-1px);
+}
+
+.footer-hours {
+  border-top: 1px solid rgba(185, 155, 114, 0.24);
+  color: var(--text-dark);
+}
+
+.footer-hours-title {
+  color: var(--text-muted);
+}
+
+.footer-hours-time {
+  color: var(--text-muted);
+}
+
+/* Bottom Legal Bar */
+.footer-bottom {
+  border-top: 1px solid var(--gold-border);
+}
+
+.footer-copyright {
+  color: var(--text-muted);
+}
+
+.footer-legal-link {
+  color: var(--text-muted);
+  transition: color 0.18s ease;
+}
+
+.footer-legal-link:hover {
+  color: var(--text-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-brand-mark,
+  .footer-social-btn,
+  .footer-link,
+  .footer-whatsapp-btn {
+    transition: none;
+  }
+}

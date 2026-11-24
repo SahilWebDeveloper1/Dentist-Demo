@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+/* Firefox & Standard Browsers */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #B99B72 #FCFAF6;
+}
+
+/* Chrome, Edge & Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FCFAF6;
+  border-left: 1px solid rgba(185, 155, 114, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #DCEAE5;
+  border: 2px solid #FCFAF6;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #B99B72;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #1F2624;
+}

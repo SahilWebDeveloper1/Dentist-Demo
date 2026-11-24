@@ -1,0 +1,1209 @@
+:root {
+  --pearl-white: #FCFAF6;
+  --pale-eucalyptus: #DCEAE5;
+  --pale-eucalyptus-soft: rgba(220, 234, 229, 0.48);
+  --champagne-gold: #B99B72;
+  --gold-border: rgba(185, 155, 114, 0.36);
+  --gold-border-strong: rgba(185, 155, 114, 0.65);
+  --text-dark: #1F2624;
+  --text-muted: #525C59;
+  --text-dark-hover: #121716;
+}
+
+.home-page {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  overflow-x: clip;
+}
+
+/* 70% Pearl White primary background with subtle Eucalyptus atmospheric glow */
+.hero-section {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(220, 234, 229, 0.55) 0%, rgba(220, 234, 229, 0) 48%),
+    radial-gradient(circle at 10% 85%, rgba(220, 234, 229, 0.3) 0%, rgba(220, 234, 229, 0) 42%),
+    var(--pearl-white);
+  color: var(--text-dark);
+}
+
+/* Eyebrow Pill */
+.hero-eyebrow {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 10px -4px rgba(31, 38, 36, 0.08);
+}
+
+.hero-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--champagne-gold);
+  box-shadow: 0 0 0 3px rgba(185, 155, 114, 0.2);
+}
+
+/* Editorial Typography */
+.hero-title {
+  color: var(--text-dark);
+  letter-spacing: -0.025em;
+}
+
+.hero-description {
+  color: var(--text-muted);
+}
+
+/* Primary CTA — Dark neutral for strong contrast (no gold button backgrounds) */
+.hero-cta-primary {
+  background-color: var(--text-dark);
+  color: var(--pearl-white);
+  border: 1px solid var(--text-dark);
+  box-shadow: 0 12px 26px -10px rgba(31, 38, 36, 0.36);
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.hero-cta-primary:hover {
+  background-color: var(--text-dark-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -10px rgba(31, 38, 36, 0.44);
+}
+
+.hero-cta-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary CTA — Crisp Pearl White with Champagne Gold border, Eucalyptus hover */
+.hero-cta-secondary {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border-strong);
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.24s ease, border-color 0.24s ease;
+}
+
+.hero-cta-secondary:hover {
+  background-color: var(--pale-eucalyptus);
+  border-color: var(--champagne-gold);
+  transform: translateY(-2px);
+}
+
+/* Optional Emergency & Location Row */
+.hero-meta {
+  border-top: 1px solid var(--gold-border);
+}
+
+.hero-meta-item {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.hero-meta-item:hover {
+  color: var(--text-dark);
+}
+
+.hero-meta-badge {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.hero-meta-icon {
+  color: var(--champagne-gold);
+}
+
+/* Clinic Photograph Frame */
+.hero-media-wrapper {
+  background: linear-gradient(145deg, var(--pale-eucalyptus) 0%, rgba(220, 234, 229, 0.55) 100%);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 28px 64px -22px rgba(31, 38, 36, 0.16);
+}
+
+.hero-image-frame {
+  background-color: var(--pearl-white);
+  border: 1px solid rgba(185, 155, 114, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(252, 250, 246, 0.6);
+}
+
+.hero-image {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-media-wrapper:hover .hero-image {
+  transform: scale(1.025);
+}
+
+/* Floating Verification Card */
+.hero-floating-card {
+  background-color: rgba(252, 250, 246, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 16px 36px -12px rgba(31, 38, 36, 0.16);
+}
+
+.hero-floating-icon {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.hero-floating-title {
+  color: var(--text-dark);
+}
+
+.hero-floating-sub {
+  color: var(--text-muted);
+}
+
+.hero-floating-link {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-floating-link:hover {
+  background-color: #CFE2DB;
+  border-color: var(--champagne-gold);
+}
+
+/* Trust Indicators Cards — Airy Eucalyptus tint with Champagne Gold hover */
+.hero-trust-card {
+  background-color: var(--pale-eucalyptus-soft);
+  border: 1px solid var(--gold-border);
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.hero-trust-card:hover {
+  background-color: var(--pale-eucalyptus);
+  border-color: var(--champagne-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -14px rgba(31, 38, 36, 0.14);
+}
+
+.hero-trust-icon {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.hero-trust-label {
+  color: var(--text-muted);
+}
+
+.hero-trust-value {
+  color: var(--text-dark);
+}
+
+/* Trust & Credibility Strip (Immediately after Hero) */
+.credibility-strip {
+  background-color: var(--pale-eucalyptus-soft);
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.credibility-item {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.credibility-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--champagne-gold);
+  box-shadow: 0 12px 26px -14px rgba(31, 38, 36, 0.12);
+}
+
+.credibility-icon {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.credibility-title {
+  color: var(--text-dark);
+}
+
+.credibility-text {
+  color: var(--text-muted);
+}
+
+/* About the Clinic Preview Section */
+.about-preview-section {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+}
+
+.about-preview-media {
+  background-color: var(--pale-eucalyptus);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 24px 56px -22px rgba(31, 38, 36, 0.14);
+}
+
+.about-preview-image-frame {
+  border: 1px solid rgba(185, 155, 114, 0.28);
+  background-color: var(--pearl-white);
+}
+
+.about-preview-image {
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-preview-media:hover .about-preview-image {
+  transform: scale(1.025);
+}
+
+.about-preview-eyebrow {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.about-preview-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.about-preview-intro {
+  color: var(--text-muted);
+}
+
+.about-philosophy-card {
+  background-color: var(--pale-eucalyptus-soft);
+  border: 1px solid var(--gold-border);
+  border-left: 3px solid var(--champagne-gold);
+}
+
+.about-philosophy-label {
+  color: var(--text-dark);
+}
+
+.about-philosophy-text {
+  color: var(--text-muted);
+}
+
+.about-diff-item {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.about-diff-item:hover {
+  background-color: var(--pale-eucalyptus-soft);
+  border-color: var(--champagne-gold);
+  transform: translateX(3px);
+}
+
+.about-diff-icon {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.about-diff-title {
+  color: var(--text-dark);
+}
+
+.about-diff-desc {
+  color: var(--text-muted);
+}
+
+.about-preview-link {
+  background-color: var(--text-dark);
+  color: var(--pearl-white);
+  border: 1px solid var(--text-dark);
+  box-shadow: 0 10px 24px -10px rgba(31, 38, 36, 0.34);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.about-preview-link:hover {
+  background-color: var(--text-dark-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -10px rgba(31, 38, 36, 0.42);
+}
+
+/* Featured Dental Treatments Section */
+.treatments-section {
+  background-color: var(--pale-eucalyptus-soft);
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.treatments-eyebrow {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.treatments-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.treatments-subtitle {
+  color: var(--text-muted);
+}
+
+.treatments-all-link {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border-strong);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.treatments-all-link:hover {
+  background-color: var(--pale-eucalyptus);
+  border-color: var(--champagne-gold);
+  transform: translateY(-1px);
+}
+
+.treatment-card {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.treatment-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--champagne-gold);
+  box-shadow: 0 18px 36px -16px rgba(31, 38, 36, 0.14);
+}
+
+.treatment-media {
+  background: linear-gradient(145deg, var(--pale-eucalyptus) 0%, rgba(220, 234, 229, 0.52) 100%);
+  border-bottom: 1px solid var(--gold-border);
+  color: var(--text-dark);
+}
+
+.treatment-illustration {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.treatment-card:hover .treatment-illustration {
+  transform: scale(1.06);
+}
+
+.treatment-name {
+  color: var(--text-dark);
+}
+
+.treatment-desc {
+  color: var(--text-muted);
+}
+
+.treatment-learn-more {
+  color: var(--text-dark);
+  border-top: 1px solid rgba(185, 155, 114, 0.22);
+  transition: color 0.2s ease;
+}
+
+.treatment-learn-more svg {
+  color: var(--champagne-gold);
+  transition: transform 0.2s ease;
+}
+
+.treatment-card:hover .treatment-learn-more svg {
+  transform: translateX(4px);
+}
+
+/* Meet Our Dentists Section */
+.dentists-section {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+}
+
+.dentists-eyebrow {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.dentists-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.dentists-subtitle {
+  color: var(--text-muted);
+}
+
+.dentists-all-link {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border-strong);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.dentists-all-link:hover {
+  background-color: var(--pale-eucalyptus);
+  border-color: var(--champagne-gold);
+  transform: translateY(-1px);
+}
+
+.dentist-card {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 14px 34px -20px rgba(31, 38, 36, 0.14);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dentist-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--champagne-gold);
+  box-shadow: 0 22px 44px -18px rgba(31, 38, 36, 0.16);
+}
+
+.dentist-photo-wrap {
+  background: linear-gradient(145deg, var(--pale-eucalyptus) 0%, rgba(220, 234, 229, 0.58) 100%);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.dentist-photo {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dentist-card:hover .dentist-photo {
+  transform: scale(1.03);
+}
+
+.dentist-placeholder-avatar {
+  color: var(--text-dark);
+  opacity: 0.55;
+}
+
+.dentist-experience-badge {
+  background-color: rgba(252, 250, 246, 0.94);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dentist-name {
+  color: var(--text-dark);
+}
+
+.dentist-designation {
+  color: var(--text-muted);
+}
+
+.dentist-meta-pill {
+  background-color: var(--pale-eucalyptus-soft);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.dentist-intro {
+  color: var(--text-muted);
+}
+
+.dentist-profile-cta {
+  background-color: var(--text-dark);
+  color: var(--pearl-white);
+  border: 1px solid var(--text-dark);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.dentist-profile-cta:hover {
+  background-color: var(--text-dark-hover);
+  transform: translateY(-1px);
+}
+
+/* Why Choose Our Clinic Section */
+.why-choose-section {
+  background-color: var(--pale-eucalyptus-soft);
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  color: var(--text-dark);
+}
+
+.why-choose-eyebrow {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.why-choose-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.why-choose-subtitle {
+  color: var(--text-muted);
+}
+
+.why-choose-card {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.why-choose-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--champagne-gold);
+  box-shadow: 0 16px 32px -16px rgba(31, 38, 36, 0.14);
+}
+
+.why-choose-icon {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.why-choose-number {
+  color: var(--champagne-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.why-choose-card-title {
+  color: var(--text-dark);
+}
+
+.why-choose-card-desc {
+  color: var(--text-muted);
+}
+
+/* Clinic Experience / Our Facility Section */
+.facility-section {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+}
+
+.facility-eyebrow {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.facility-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.facility-subtitle {
+  color: var(--text-muted);
+}
+
+.facility-card {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 14px 32px -20px rgba(31, 38, 36, 0.14);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.facility-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--champagne-gold);
+  box-shadow: 0 20px 42px -18px rgba(31, 38, 36, 0.16);
+}
+
+.facility-media {
+  background-color: var(--pale-eucalyptus);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.facility-image {
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.facility-card:hover .facility-image {
+  transform: scale(1.03);
+}
+
+.facility-badge {
+  background-color: rgba(252, 250, 246, 0.94);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.facility-card-title {
+  color: var(--text-dark);
+}
+
+.facility-card-desc {
+  color: var(--text-muted);
+}
+
+.facility-accessibility-card {
+  background-color: var(--pale-eucalyptus-soft);
+  border: 1px solid var(--gold-border);
+  border-left: 3px solid var(--champagne-gold);
+}
+
+.facility-accessibility-icon {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.facility-accessibility-title {
+  color: var(--text-dark);
+}
+
+.facility-accessibility-desc {
+  color: var(--text-muted);
+}
+
+.facility-accessibility-pill {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+/* How It Works / Patient Journey Section */
+.journey-section {
+  background-color: var(--pale-eucalyptus-soft);
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  color: var(--text-dark);
+}
+
+.journey-eyebrow {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.journey-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.journey-subtitle {
+  color: var(--text-muted);
+}
+
+.journey-step-card {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.journey-step-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--champagne-gold);
+  box-shadow: 0 16px 32px -16px rgba(31, 38, 36, 0.14);
+}
+
+.journey-step-num {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+  font-variant-numeric: tabular-nums;
+}
+
+.journey-step-title {
+  color: var(--text-dark);
+}
+
+.journey-step-desc {
+  color: var(--text-muted);
+}
+
+.journey-note-card {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  border-left: 3px solid var(--champagne-gold);
+}
+
+.journey-note-icon {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.journey-note-text {
+  color: var(--text-dark);
+}
+
+.journey-cta-btn {
+  background-color: var(--text-dark);
+  color: var(--pearl-white);
+  border: 1px solid var(--text-dark);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.journey-cta-btn:hover {
+  background-color: var(--text-dark-hover);
+  transform: translateY(-1px);
+}
+
+/* Smile Transformation / Before & After Section */
+.transformations-section {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+}
+
+.transformations-eyebrow {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.transformations-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.transformations-subtitle {
+  color: var(--text-muted);
+}
+
+.transformations-all-link {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border-strong);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.transformations-all-link:hover {
+  background-color: var(--pale-eucalyptus);
+  border-color: var(--champagne-gold);
+  transform: translateY(-1px);
+}
+
+.transformation-card {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 14px 34px -20px rgba(31, 38, 36, 0.14);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.transformation-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--champagne-gold);
+  box-shadow: 0 22px 44px -18px rgba(31, 38, 36, 0.16);
+}
+
+.transformation-media {
+  background-color: var(--pale-eucalyptus-soft);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.transformation-photo-slot {
+  background: linear-gradient(145deg, var(--pale-eucalyptus) 0%, rgba(220, 234, 229, 0.52) 100%);
+  border: 1px dashed var(--gold-border-strong);
+  color: var(--text-dark);
+}
+
+.transformation-toggle-group {
+  background-color: rgba(252, 250, 246, 0.94);
+  border: 1px solid var(--gold-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.transformation-toggle-btn {
+  color: var(--text-muted);
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.transformation-toggle-btn--active {
+  background-color: var(--text-dark);
+  color: var(--pearl-white);
+}
+
+.transformation-category {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.transformation-duration {
+  color: var(--text-muted);
+}
+
+.transformation-desc {
+  color: var(--text-muted);
+}
+
+.transformation-consent {
+  color: var(--text-dark);
+  border-top: 1px solid rgba(185, 155, 114, 0.24);
+}
+
+.transformation-consent svg {
+  color: var(--champagne-gold);
+}
+
+.transformation-disclaimer {
+  background-color: var(--pale-eucalyptus-soft);
+  border: 1px solid var(--gold-border);
+  border-left: 3px solid var(--champagne-gold);
+  color: var(--text-muted);
+}
+
+/* Appointment Booking CTA Section */
+.booking-cta-section {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+}
+
+.booking-cta-card {
+  background:
+    radial-gradient(circle at 92% 20%, rgba(252, 250, 246, 0.72) 0%, rgba(252, 250, 246, 0) 45%),
+    var(--pale-eucalyptus);
+  border: 1px solid var(--gold-border-strong);
+  box-shadow: 0 24px 56px -24px rgba(31, 38, 36, 0.16);
+}
+
+.booking-cta-eyebrow {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.booking-cta-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.booking-cta-desc {
+  color: var(--text-muted);
+}
+
+.booking-cta-btn {
+  background-color: var(--text-dark);
+  color: var(--pearl-white);
+  border: 1px solid var(--text-dark);
+  box-shadow: 0 12px 26px -10px rgba(31, 38, 36, 0.36);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.booking-cta-btn:hover {
+  background-color: var(--text-dark-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -10px rgba(31, 38, 36, 0.44);
+}
+
+.booking-cta-secondary {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border-strong);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.22s ease, background-color 0.22s ease;
+}
+
+.booking-cta-secondary:hover {
+  border-color: var(--champagne-gold);
+  background-color: rgba(252, 250, 246, 0.85);
+  transform: translateY(-2px);
+}
+
+.booking-cta-icon {
+  color: var(--champagne-gold);
+}
+
+/* FAQs Preview Section */
+.faqs-section {
+  background-color: var(--pale-eucalyptus-soft);
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  color: var(--text-dark);
+}
+
+.faqs-eyebrow {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.faqs-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.faqs-subtitle {
+  color: var(--text-muted);
+}
+
+.faqs-all-link {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border-strong);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.faqs-all-link:hover {
+  background-color: var(--pale-eucalyptus);
+  border-color: var(--champagne-gold);
+  transform: translateY(-1px);
+}
+
+.faq-item {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item--open,
+.faq-item:hover {
+  border-color: var(--champagne-gold);
+  box-shadow: 0 12px 26px -16px rgba(31, 38, 36, 0.14);
+}
+
+.faq-trigger {
+  color: var(--text-dark);
+}
+
+.faq-chevron {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+  transition: transform 0.24s ease, background-color 0.2s ease;
+}
+
+.faq-item--open .faq-chevron {
+  transform: rotate(180deg);
+  background-color: var(--text-dark);
+  color: var(--pearl-white);
+  border-color: var(--text-dark);
+}
+
+.faq-answer-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.26s ease;
+}
+
+.faq-item--open .faq-answer-wrap {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.faq-answer {
+  color: var(--text-muted);
+  border-top: 1px solid rgba(185, 155, 114, 0.22);
+}
+
+/* Location Preview Section */
+.location-section {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+}
+
+.location-eyebrow {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.location-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.location-subtitle {
+  color: var(--text-muted);
+}
+
+.location-info-card {
+  background-color: var(--pale-eucalyptus-soft);
+  border: 1px solid var(--gold-border);
+}
+
+.location-detail-row {
+  border-bottom: 1px solid rgba(185, 155, 114, 0.24);
+}
+
+.location-detail-row:last-of-type {
+  border-bottom: none;
+}
+
+.location-icon {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.location-label {
+  color: var(--text-muted);
+}
+
+.location-value {
+  color: var(--text-dark);
+}
+
+.location-directions-btn {
+  background-color: var(--text-dark);
+  color: var(--pearl-white);
+  border: 1px solid var(--text-dark);
+  box-shadow: 0 12px 26px -10px rgba(31, 38, 36, 0.34);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.location-directions-btn:hover {
+  background-color: var(--text-dark-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -10px rgba(31, 38, 36, 0.42);
+}
+
+.location-map-card {
+  background-color: var(--pale-eucalyptus);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 24px 56px -22px rgba(31, 38, 36, 0.14);
+}
+
+.location-map-frame {
+  border: 1px solid rgba(185, 155, 114, 0.3);
+  background-color: var(--pearl-white);
+}
+
+/* Blog / Dental Education Preview Section */
+.blog-section {
+  background-color: var(--pale-eucalyptus-soft);
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  color: var(--text-dark);
+}
+
+.blog-eyebrow {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.blog-title {
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.blog-subtitle {
+  color: var(--text-muted);
+}
+
+.blog-all-link {
+  background-color: var(--pearl-white);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border-strong);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.blog-all-link:hover {
+  background-color: var(--pale-eucalyptus);
+  border-color: var(--champagne-gold);
+  transform: translateY(-1px);
+}
+
+.blog-card {
+  background-color: var(--pearl-white);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 14px 34px -20px rgba(31, 38, 36, 0.14);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--champagne-gold);
+  box-shadow: 0 22px 44px -18px rgba(31, 38, 36, 0.16);
+}
+
+.blog-media {
+  background-color: var(--pale-eucalyptus);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.blog-thumbnail {
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.blog-card:hover .blog-thumbnail {
+  transform: scale(1.03);
+}
+
+.blog-date {
+  color: var(--text-muted);
+}
+
+.blog-category {
+  background-color: var(--pale-eucalyptus);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-border);
+}
+
+.blog-card-title {
+  color: var(--text-dark);
+}
+
+.blog-excerpt {
+  color: var(--text-muted);
+}
+
+.blog-read-more {
+  color: var(--text-dark);
+  border-top: 1px solid rgba(185, 155, 114, 0.22);
+}
+
+.blog-read-more svg {
+  color: var(--champagne-gold);
+  transition: transform 0.2s ease;
+}
+
+.blog-card:hover .blog-read-more svg {
+  transform: translateX(4px);
+}
+
+/* Staggered Entrance Animations */
+.hero-animate {
+  animation: heroFadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-animate--1 { animation-delay: 0.05s; }
+.hero-animate--2 { animation-delay: 0.12s; }
+.hero-animate--3 { animation-delay: 0.18s; }
+.hero-animate--4 { animation-delay: 0.24s; }
+.hero-animate--5 { animation-delay: 0.3s; }
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate,
+  .hero-cta-primary,
+  .hero-cta-secondary,
+  .hero-image,
+  .hero-trust-card,
+  .credibility-item,
+  .about-preview-image,
+  .about-diff-item,
+  .about-preview-link,
+  .treatments-all-link,
+  .treatment-card,
+  .treatment-illustration,
+  .treatment-learn-more svg,
+  .dentists-all-link,
+  .dentist-card,
+  .dentist-photo,
+  .dentist-profile-cta,
+  .why-choose-card,
+  .facility-card,
+  .facility-image,
+  .journey-step-card,
+  .journey-cta-btn,
+  .transformations-all-link,
+  .transformation-card,
+  .booking-cta-btn,
+  .booking-cta-secondary,
+  .faqs-all-link,
+  .faq-chevron,
+  .faq-answer-wrap,
+  .location-directions-btn,
+  .blog-all-link,
+  .blog-card,
+  .blog-thumbnail,
+  .blog-read-more svg {
+    animation: none;
+    transition: none;
+  }
+}

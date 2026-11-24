@@ -1,9 +1,11 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import Layout from './layout/Layout'
 import { AboutUs, Blog, BlogPost, BookAppointment, BookingConfirmation, ContactUs, DentalTreatments, DentistProfile, FAQs, Home, OurDentists, PatientReviews, PrivacyPolicy, SmileGallery, TermsAndConditions, TreatmentDetail } from './Pages'
 
 const App = () => {
   return (
+    <Layout>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<AboutUs />} />
@@ -22,6 +24,7 @@ const App = () => {
       <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       <Route path="/booking-confirmation" element={<BookingConfirmation />} />
     </Routes>
+    </Layout>
   )
 }
 
