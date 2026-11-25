@@ -1,0 +1,1566 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.about-page {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  overflow-x: hidden;
+}
+
+/* ===== Shared Container & Eyebrow ===== */
+.about-container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-eyebrow {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 2px 10px -4px rgba(31, 38, 36, 0.08);
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+}
+
+.about-eyebrow:hover {
+  border-color: var(--dental-accent);
+  background-color: rgba(220, 234, 229, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px -6px rgba(185, 155, 114, 0.35);
+}
+
+.about-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(185, 155, 114, 0.22);
+  animation: dentalPulseDot 2.6s ease-in-out infinite;
+}
+
+@keyframes dentalPulseDot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 2px rgba(185, 155, 114, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(185, 155, 114, 0.38);
+  }
+}
+
+/* ===== Always-Visible Base (Prevents Elements From Disappearing) ===== */
+.reveal-on-scroll,
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== 1. About Hero Section ===== */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(240px, 34vw, 420px);
+  background: radial-gradient(
+    ellipse 80% 70% at 75% 15%,
+    var(--dental-accent-soft),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-hero-title {
+  color: var(--dental-primary);
+  font-size: clamp(1.875rem, 3.2vw + 1rem, 3.375rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.about-hero-intro {
+  color: var(--dental-primary);
+  opacity: 0.9;
+}
+
+.about-hero-subintro {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.about-hero-media {
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  box-shadow:
+    0 20px 45px -20px rgba(31, 38, 36, 0.16),
+    0 0 0 1px rgba(252, 250, 246, 0.8) inset;
+  aspect-ratio: 4 / 3;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-hero-media:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-4px);
+  box-shadow:
+    0 26px 54px -20px rgba(31, 38, 36, 0.22),
+    0 0 0 4px rgba(185, 155, 114, 0.14);
+}
+
+.about-hero-img {
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-hero-media:hover .about-hero-img {
+  transform: scale(1.035);
+}
+
+.about-hero-caption {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  background: rgba(252, 250, 246, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--dental-border);
+  border-radius: 0.875rem;
+  color: var(--dental-primary);
+  box-shadow: 0 8px 20px -10px rgba(31, 38, 36, 0.16);
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-hero-media:hover .about-hero-caption {
+  border-color: var(--dental-accent);
+  background: rgba(252, 250, 246, 0.97);
+  transform: translateY(-2px);
+}
+
+.about-caption-tag {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.about-hero-media:hover .about-caption-tag {
+  border-color: var(--dental-accent);
+}
+
+/* ===== 2. Our Story Section ===== */
+.about-story {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.story-title {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.story-media {
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 18px 40px -18px rgba(31, 38, 36, 0.16);
+  aspect-ratio: 4 / 3;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.story-media:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-4px);
+  box-shadow:
+    0 24px 48px -18px rgba(31, 38, 36, 0.22),
+    0 0 0 4px rgba(185, 155, 114, 0.14);
+}
+
+.story-img {
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.story-media:hover .story-img {
+  transform: scale(1.04);
+}
+
+.story-est-badge {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  background: rgba(252, 250, 246, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+  box-shadow: 0 8px 20px -10px rgba(31, 38, 36, 0.18);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.story-media:hover .story-est-badge {
+  border-color: var(--dental-accent);
+  transform: translateY(-2px);
+}
+
+.story-vision-card {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  border-left: 4px solid var(--dental-accent);
+  color: var(--dental-primary);
+  box-shadow: 0 8px 24px -16px rgba(31, 38, 36, 0.14);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.story-vision-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--dental-accent);
+  background-color: rgba(220, 234, 229, 0.85);
+  box-shadow:
+    0 18px 34px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.12);
+}
+
+.story-vision-label {
+  color: var(--dental-primary);
+  opacity: 0.75;
+}
+
+.story-vision-author {
+  color: var(--dental-primary);
+  opacity: 0.85;
+}
+
+.story-timeline-span {
+  color: var(--dental-primary);
+  opacity: 0.75;
+}
+
+.story-milestone-card {
+  position: relative;
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 22px -15px rgba(31, 38, 36, 0.12);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.story-milestone-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 1.25rem auto 1.25rem;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, transparent, var(--dental-accent), transparent);
+  opacity: 0;
+  transform: scaleX(0.3);
+  transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.story-milestone-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 20px 36px -18px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.story-milestone-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.story-milestone-card:hover .story-year-pill {
+  border-color: var(--dental-accent);
+  background-color: rgba(220, 234, 229, 0.95);
+}
+
+.story-milestone-card:hover .story-milestone-dot {
+  transform: scale(1.4);
+  box-shadow: 0 0 0 6px var(--dental-accent-soft);
+}
+
+.story-year-pill {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.story-milestone-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== 3. Our Mission & Vision Section ===== */
+.about-mission {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.24) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.mission-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.mission-card {
+  position: relative;
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 10px 28px -18px rgba(31, 38, 36, 0.14);
+  transition:
+    transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.38s ease;
+}
+
+.mission-card-soft {
+  background-color: var(--dental-accent-soft);
+}
+
+.mission-card-light {
+  background-color: var(--dental-bg);
+}
+
+.mission-pill {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.mission-icon-wrap {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dental-accent);
+  box-shadow:
+    0 22px 40px -18px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.mission-card-light:hover {
+  background-color: #ffffff;
+}
+
+.mission-card:hover .mission-pill {
+  border-color: var(--dental-accent);
+}
+
+.mission-card:hover .mission-icon-wrap {
+  transform: scale(1.1) rotate(-4deg);
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+  box-shadow: 0 6px 14px -6px rgba(185, 155, 114, 0.45);
+}
+
+.value-card {
+  position: relative;
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 22px -15px rgba(31, 38, 36, 0.1);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.value-icon-box {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 18px 34px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.value-card:hover .value-icon-box {
+  transform: scale(1.1) translateY(-2px);
+  background-color: var(--dental-bg);
+  border-color: var(--dental-accent);
+  box-shadow: 0 6px 14px -6px rgba(185, 155, 114, 0.4);
+}
+
+/* ===== 4. Our Philosophy Section ===== */
+.about-philosophy {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.philosophy-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.philosophy-promise-box {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  border-left: 4px solid var(--dental-accent);
+  box-shadow: 0 8px 22px -16px rgba(31, 38, 36, 0.12);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.philosophy-promise-label {
+  color: var(--dental-primary);
+  opacity: 0.75;
+}
+
+.philosophy-promise-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--dental-accent);
+  background-color: rgba(220, 234, 229, 0.86);
+  box-shadow:
+    0 16px 30px -18px rgba(31, 38, 36, 0.18),
+    0 0 0 3px rgba(185, 155, 114, 0.12);
+}
+
+.philosophy-card {
+  position: relative;
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 22px -15px rgba(31, 38, 36, 0.1);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.philosophy-num-badge {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.philosophy-tag {
+  background-color: rgba(252, 250, 246, 0.95);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  opacity: 0.88;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.philosophy-card-bar {
+  height: 2.5px;
+  width: 2.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--dental-accent), rgba(185, 155, 114, 0.35));
+  opacity: 0.75;
+  transition: width 0.42s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 20px 36px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.philosophy-card:hover .philosophy-num-badge {
+  border-color: var(--dental-accent);
+  background-color: rgba(220, 234, 229, 0.95);
+  transform: scale(1.06);
+}
+
+.philosophy-card:hover .philosophy-tag {
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+}
+
+.philosophy-card:hover .philosophy-card-bar {
+  width: 100%;
+  opacity: 1;
+}
+
+/* ===== 5. Meet the Founder Section ===== */
+.about-founder {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    var(--dental-bg) 0%,
+    rgba(220, 234, 229, 0.2) 100%
+  );
+}
+
+.founder-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.625rem, 2.5vw + 0.75rem, 2.65rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.founder-role-line {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.founder-frame-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0.75rem -0.65rem -0.65rem 0.75rem;
+  border-radius: 1.5rem;
+  border: 1.5px solid var(--dental-border);
+  background-color: var(--dental-accent-soft);
+  z-index: 0;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+.founder-frame-wrap:hover::before {
+  transform: translate(4px, 4px);
+  border-color: var(--dental-accent);
+}
+
+.founder-media {
+  position: relative;
+  z-index: 1;
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  aspect-ratio: 3 / 4;
+  box-shadow: 0 20px 44px -20px rgba(31, 38, 36, 0.18);
+  transition:
+    border-color 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.founder-frame-wrap:hover .founder-media {
+  border-color: var(--dental-accent);
+  transform: translate(-3px, -4px);
+  box-shadow:
+    0 26px 54px -20px rgba(31, 38, 36, 0.24),
+    0 0 0 4px rgba(185, 155, 114, 0.14);
+}
+
+.founder-img {
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.founder-frame-wrap:hover .founder-img {
+  transform: scale(1.035);
+}
+
+.founder-caption {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  background: rgba(252, 250, 246, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--dental-border);
+  border-radius: 0.875rem;
+  color: var(--dental-primary);
+  box-shadow: 0 8px 22px -10px rgba(31, 38, 36, 0.18);
+  transition: border-color 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.founder-frame-wrap:hover .founder-caption {
+  border-color: var(--dental-accent);
+  transform: translateY(-2px);
+}
+
+.founder-exp-pill {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.founder-frame-wrap:hover .founder-exp-pill {
+  border-color: var(--dental-accent);
+}
+
+.founder-stat-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 20px -15px rgba(31, 38, 36, 0.12);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.founder-stat-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--dental-accent), rgba(185, 155, 114, 0.35));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.founder-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 16px 32px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.founder-stat-card:hover::after {
+  transform: scaleX(1);
+}
+
+.founder-stat-label,
+.founder-section-kicker {
+  color: var(--dental-primary);
+  opacity: 0.72;
+}
+
+.founder-journey-box {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 22px -16px rgba(31, 38, 36, 0.1);
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.founder-journey-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 16px 32px -18px rgba(31, 38, 36, 0.18),
+    0 0 0 3px rgba(185, 155, 114, 0.12);
+}
+
+.founder-message-card {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  border-left: 4px solid var(--dental-accent);
+  box-shadow: 0 10px 26px -18px rgba(31, 38, 36, 0.14);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.founder-message-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--dental-accent);
+  background-color: rgba(220, 234, 229, 0.86);
+  box-shadow:
+    0 18px 34px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.founder-signature {
+  color: var(--dental-primary);
+  opacity: 0.88;
+}
+
+/* ===== 6. Our Clinic & Infrastructure Section ===== */
+.about-infra {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.infra-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.infra-filter-btn,
+.infra-access-tab {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease;
+}
+
+.infra-filter-btn:hover,
+.infra-access-tab:hover {
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+  transform: translateY(-1px);
+}
+
+.infra-filter-btn.is-active,
+.infra-access-tab.is-active {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border-color: var(--dental-primary);
+  box-shadow: 0 8px 18px -8px rgba(31, 38, 36, 0.35);
+}
+
+@keyframes infraFadeSlide {
+  from {
+    opacity: 0.4;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.infra-spotlight {
+  background-color: var(--dental-accent-soft);
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 18px 40px -22px rgba(31, 38, 36, 0.18);
+  animation: infraFadeSlide 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: border-color 0.3s ease, box-shadow 0.35s ease;
+}
+
+.infra-spotlight:hover {
+  border-color: var(--dental-accent);
+  box-shadow:
+    0 24px 48px -22px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.12);
+}
+
+.infra-spotlight-media {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.infra-spotlight-img {
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.infra-spotlight:hover .infra-spotlight-img {
+  transform: scale(1.03);
+}
+
+.infra-spotlight-tag {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: rgba(252, 250, 246, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.infra-cat-pill {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.infra-counter {
+  color: var(--dental-primary);
+  opacity: 0.72;
+}
+
+.infra-check-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  box-shadow: 0 0 0 3px rgba(252, 250, 246, 0.8);
+}
+
+.infra-nav-btn {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.infra-nav-btn:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px -8px rgba(31, 38, 36, 0.2);
+}
+
+.infra-nav-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border-color: var(--dental-primary);
+}
+
+.infra-nav-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+}
+
+.infra-card {
+  position: relative;
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 22px -15px rgba(31, 38, 36, 0.12);
+  cursor: pointer;
+  animation: infraFadeSlide 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.infra-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 20px 36px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.infra-card.is-selected {
+  border: 1.5px solid var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 18px 34px -18px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.2);
+}
+
+.infra-card-media {
+  aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--dental-border);
+}
+
+.infra-card-img {
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.infra-card:hover .infra-card-img,
+.infra-card.is-selected .infra-card-img {
+  transform: scale(1.05);
+}
+
+.infra-card-pill {
+  position: absolute;
+  top: 0.625rem;
+  left: 0.625rem;
+  background: rgba(252, 250, 246, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.infra-card-cat {
+  color: var(--dental-primary);
+  opacity: 0.68;
+}
+
+.infra-card-footer {
+  border-color: var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.infra-card-arrow {
+  transition: transform 0.25s ease;
+}
+
+.infra-card:hover .infra-card-arrow,
+.infra-card.is-selected .infra-card-arrow {
+  transform: translateX(4px);
+}
+
+.infra-access-panel {
+  background: linear-gradient(
+    135deg,
+    var(--dental-accent-soft) 0%,
+    rgba(252, 250, 246, 0.95) 100%
+  );
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 14px 34px -20px rgba(31, 38, 36, 0.16);
+  transition: border-color 0.3s ease, box-shadow 0.35s ease;
+}
+
+.infra-access-panel:hover {
+  border-color: var(--dental-accent);
+}
+
+.infra-access-detail {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  animation: infraFadeSlide 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.infra-access-spec {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.infra-access-spec:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-2px);
+}
+
+/* ===== 7. Technology & Equipment Section ===== */
+.about-tech {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.22) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.tech-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.tech-verified-badge {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 4px 12px -6px rgba(31, 38, 36, 0.12);
+}
+
+.tech-verified-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  box-shadow: 0 0 0 3px var(--dental-accent-soft);
+}
+
+.tech-card {
+  position: relative;
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 22px -15px rgba(31, 38, 36, 0.1);
+  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 18px 34px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.tech-card.is-selected {
+  border: 1.5px solid var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 18px 34px -18px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.2);
+}
+
+.tech-cat-pill {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.tech-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: var(--dental-border);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tech-card:hover .tech-status-dot,
+.tech-card.is-selected .tech-status-dot {
+  background-color: var(--dental-accent);
+  transform: scale(1.25);
+  box-shadow: 0 0 0 4px var(--dental-accent-soft);
+}
+
+.tech-card-footer {
+  border-color: var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.tech-card-arrow {
+  transition: transform 0.25s ease;
+}
+
+.tech-card:hover .tech-card-arrow,
+.tech-card.is-selected .tech-card-arrow {
+  transform: translateX(4px);
+}
+
+.tech-detail-panel {
+  background-color: var(--dental-accent-soft);
+  border: 1.5px solid var(--dental-border);
+  border-top: 4px solid var(--dental-accent);
+  box-shadow: 0 18px 40px -22px rgba(31, 38, 36, 0.18);
+  animation: infraFadeSlide 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: border-color 0.3s ease, box-shadow 0.35s ease;
+}
+
+.tech-detail-panel:hover {
+  border-color: var(--dental-accent);
+  box-shadow:
+    0 22px 44px -22px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.12);
+}
+
+.tech-detail-pill {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.tech-detail-cat,
+.tech-benefit-label {
+  color: var(--dental-primary);
+  opacity: 0.72;
+}
+
+.tech-benefit-highlight {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+/* ===== 8. Hygiene & Sterilization Section ===== */
+.about-hygiene {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.hygiene-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.hygiene-trust-pill {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 4px 14px -8px rgba(31, 38, 36, 0.14);
+}
+
+.hygiene-shield-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  box-shadow: 0 0 0 3px rgba(252, 250, 246, 0.85);
+}
+
+.hygiene-step-card {
+  position: relative;
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 20px -15px rgba(31, 38, 36, 0.1);
+  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.hygiene-step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 18px 34px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.hygiene-step-card.is-selected {
+  border: 1.5px solid var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+  box-shadow:
+    0 18px 34px -18px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.2);
+}
+
+.hygiene-step-num {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.hygiene-step-card.is-selected .hygiene-step-num {
+  background-color: var(--dental-bg);
+  border-color: var(--dental-accent);
+}
+
+.hygiene-step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: var(--dental-border);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hygiene-step-card:hover .hygiene-step-dot,
+.hygiene-step-card.is-selected .hygiene-step-dot {
+  background-color: var(--dental-accent);
+  transform: scale(1.25);
+  box-shadow: 0 0 0 4px rgba(252, 250, 246, 0.85);
+}
+
+.hygiene-step-badge {
+  border-color: var(--dental-border);
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.hygiene-detail-card {
+  background-color: var(--dental-accent-soft);
+  border: 1.5px solid var(--dental-border);
+  border-left: 4px solid var(--dental-accent);
+  box-shadow: 0 16px 38px -22px rgba(31, 38, 36, 0.16);
+  animation: infraFadeSlide 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: border-color 0.3s ease, box-shadow 0.35s ease;
+}
+
+.hygiene-detail-card:hover {
+  border-color: var(--dental-accent);
+}
+
+.hygiene-active-pill {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.hygiene-check-row {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.hygiene-check-row:hover {
+  border-color: var(--dental-accent);
+  transform: translateX(4px);
+}
+
+/* ===== 9. Why Patients Choose Us Section ===== */
+.about-choose {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.2) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.choose-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.choose-live-banner {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  border-left: 4px solid var(--dental-accent);
+  color: var(--dental-primary);
+  animation: infraFadeSlide 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.choose-live-label {
+  color: var(--dental-primary);
+  opacity: 0.75;
+}
+
+.choose-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 22px -15px rgba(31, 38, 36, 0.12);
+  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.choose-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--dental-accent), rgba(185, 155, 114, 0.3));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.choose-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 20px 36px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.choose-card.is-selected {
+  border: 1.5px solid var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 20px 38px -18px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.2);
+}
+
+.choose-card:hover::after,
+.choose-card.is-selected::after {
+  transform: scaleX(1);
+}
+
+.choose-num-pill {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.choose-metric-pill {
+  background-color: rgba(252, 250, 246, 0.95);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.choose-card:hover .choose-num-pill,
+.choose-card.is-selected .choose-num-pill {
+  border-color: var(--dental-accent);
+  transform: scale(1.06);
+}
+
+.choose-card:hover .choose-metric-pill,
+.choose-card.is-selected .choose-metric-pill {
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+}
+
+.choose-card-footer {
+  border-color: var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.choose-arrow {
+  transition: transform 0.25s ease;
+}
+
+.choose-card:hover .choose-arrow,
+.choose-card.is-selected .choose-arrow {
+  transform: translateX(4px);
+}
+
+/* ===== 10. CTA Section ===== */
+.about-cta {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.cta-banner {
+  background: linear-gradient(
+    135deg,
+    var(--dental-accent-soft) 0%,
+    rgba(220, 234, 229, 0.42) 100%
+  );
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 20px 44px -22px rgba(31, 38, 36, 0.18);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cta-banner:hover {
+  border-color: var(--dental-accent);
+  box-shadow:
+    0 24px 50px -22px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.12);
+}
+
+.cta-eyebrow {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.cta-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.35rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.cta-btn {
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s ease;
+}
+
+.cta-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1px solid var(--dental-primary);
+  box-shadow: 0 10px 22px -10px rgba(31, 38, 36, 0.4);
+}
+
+.cta-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px -10px rgba(31, 38, 36, 0.48);
+}
+
+.cta-btn-secondary {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.cta-btn-secondary:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -12px rgba(185, 155, 114, 0.45);
+}
+
+/* ===== Keyboard Focus Accessibility ===== */
+.about-page a:focus-visible,
+.about-page button:focus-visible,
+.about-page article:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 3px;
+}
+
+/* ===== Responsive Breakpoints ===== */
+@media (max-width: 639px) {
+  .story-timeline-grid {
+    position: relative;
+    padding-left: 1rem;
+    border-left: 2px solid var(--dental-border);
+  }
+
+  .founder-frame-wrap::before {
+    inset: 0.5rem -0.35rem -0.35rem 0.5rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+
+  .about-hero-media:hover,
+  .story-media:hover,
+  .story-milestone-card:hover,
+  .mission-card:hover,
+  .value-card:hover,
+  .philosophy-card:hover,
+  .founder-stat-card:hover,
+  .founder-journey-box:hover,
+  .founder-message-card:hover,
+  .infra-card:hover,
+  .tech-card:hover,
+  .hygiene-step-card:hover,
+  .choose-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-media,
+  .story-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .founder-media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .about-hero-caption,
+  .story-est-badge,
+  .founder-caption {
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .about-container {
+    max-width: 82rem;
+  }
+}
+
+/* ===== Accessibility: Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .about-eyebrow-dot,
+  .infra-spotlight,
+  .infra-card,
+  .infra-access-detail,
+  .tech-detail-panel,
+  .hygiene-detail-card,
+  .choose-live-banner {
+    animation: none;
+  }
+
+  .about-eyebrow,
+  .about-hero-media,
+  .about-hero-img,
+  .about-hero-caption,
+  .about-caption-tag,
+  .story-media,
+  .story-img,
+  .story-est-badge,
+  .story-vision-card,
+  .story-milestone-card,
+  .story-milestone-card::before,
+  .story-year-pill,
+  .story-milestone-dot,
+  .mission-card,
+  .mission-pill,
+  .mission-icon-wrap,
+  .value-card,
+  .value-icon-box,
+  .philosophy-promise-box,
+  .philosophy-card,
+  .philosophy-num-badge,
+  .philosophy-tag,
+  .philosophy-card-bar,
+  .founder-frame-wrap::before,
+  .founder-media,
+  .founder-img,
+  .founder-caption,
+  .founder-exp-pill,
+  .founder-stat-card,
+  .founder-stat-card::after,
+  .founder-journey-box,
+  .founder-message-card,
+  .infra-filter-btn,
+  .infra-access-tab,
+  .infra-spotlight,
+  .infra-spotlight-img,
+  .infra-nav-btn,
+  .infra-card,
+  .infra-card-img,
+  .infra-card-arrow,
+  .infra-access-panel,
+  .infra-access-spec,
+  .tech-card,
+  .tech-status-dot,
+  .tech-card-arrow,
+  .tech-detail-panel,
+  .hygiene-step-card,
+  .hygiene-step-num,
+  .hygiene-step-dot,
+  .hygiene-detail-card,
+  .hygiene-check-row,
+  .choose-card,
+  .choose-card::after,
+  .choose-num-pill,
+  .choose-metric-pill,
+  .choose-arrow,
+  .cta-banner,
+  .cta-btn {
+    transition: none;
+  }
+}
