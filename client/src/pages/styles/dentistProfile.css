@@ -1,0 +1,348 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.profile-page {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  overflow-x: hidden;
+}
+
+.profile-container {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-intro {
+  color: var(--dental-primary);
+  opacity: 0.9;
+}
+
+.profile-subintro {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.profile-kicker {
+  color: var(--dental-primary);
+  opacity: 0.72;
+}
+
+/* ===== Buttons & Links ===== */
+.profile-back-link {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  text-decoration: none;
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.profile-back-link:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateX(-2px);
+}
+
+.profile-btn {
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease;
+}
+
+.profile-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1px solid var(--dental-primary);
+  box-shadow: 0 8px 18px -10px rgba(31, 38, 36, 0.4);
+}
+
+.profile-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -10px rgba(31, 38, 36, 0.48);
+}
+
+.profile-btn-secondary {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.profile-btn-secondary:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -12px rgba(185, 155, 114, 0.45);
+}
+
+/* ===== Hero Section ===== */
+.profile-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(220px, 32vw, 380px);
+  background: radial-gradient(
+    ellipse 80% 70% at 25% 15%,
+    var(--dental-accent-soft),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.profile-frame-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0.75rem -0.65rem -0.65rem 0.75rem;
+  border-radius: 1.5rem;
+  border: 1.5px solid var(--dental-border);
+  background-color: var(--dental-accent-soft);
+  z-index: 0;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+}
+
+.profile-frame-wrap:hover::before {
+  transform: translate(4px, 4px);
+  border-color: var(--dental-accent);
+}
+
+.profile-media {
+  position: relative;
+  z-index: 1;
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  aspect-ratio: 3 / 4;
+  box-shadow: 0 20px 44px -20px rgba(31, 38, 36, 0.18);
+  transition: border-color 0.35s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.profile-frame-wrap:hover .profile-media {
+  border-color: var(--dental-accent);
+  transform: translate(-3px, -4px);
+}
+
+.profile-img {
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.profile-frame-wrap:hover .profile-img {
+  transform: scale(1.03);
+}
+
+.profile-photo-badge {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  background: rgba(252, 250, 246, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.profile-verified-tag {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.profile-spec-pill {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.profile-name-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.875rem, 3vw + 0.85rem, 3.1rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.profile-title-line {
+  color: var(--dental-primary);
+  opacity: 0.82;
+}
+
+.profile-info-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 20px -15px rgba(31, 38, 36, 0.12);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-info-card:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 28px -16px rgba(31, 38, 36, 0.18),
+    0 0 0 3px rgba(185, 155, 114, 0.12);
+}
+
+.profile-bio-box {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  border-left: 4px solid var(--dental-accent);
+}
+
+/* ===== Details Section ===== */
+.profile-details {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.2) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.profile-section-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 10px 26px -18px rgba(31, 38, 36, 0.12);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-section-card:hover {
+  border-color: var(--dental-accent);
+  box-shadow: 0 16px 34px -18px rgba(31, 38, 36, 0.18);
+}
+
+.profile-list-item {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.profile-list-item:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-2px);
+}
+
+.profile-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+}
+
+.profile-availability-card {
+  background-color: var(--dental-accent-soft);
+  border: 1.5px solid var(--dental-border);
+  border-top: 4px solid var(--dental-accent);
+}
+
+.profile-slot-row {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+}
+
+/* ===== Related Dentists ===== */
+.profile-related {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.related-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 8px 22px -15px rgba(31, 38, 36, 0.12);
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 20px 36px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.related-photo-wrap {
+  aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--dental-border);
+  background-color: var(--dental-accent-soft);
+}
+
+.related-photo {
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.related-card:hover .related-photo {
+  transform: scale(1.04);
+}
+
+.related-exp-tag {
+  position: absolute;
+  left: 0.65rem;
+  bottom: 0.65rem;
+  background: rgba(252, 250, 246, 0.94);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.profile-not-found {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+/* ===== Accessibility & Responsive Breakpoints ===== */
+.profile-page a:focus-visible,
+.profile-page button:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+  .profile-frame-wrap::before {
+    inset: 0.5rem -0.35rem -0.35rem 0.5rem;
+  }
+
+  .profile-media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .profile-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .profile-container {
+    max-width: 82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-back-link,
+  .profile-btn,
+  .profile-frame-wrap::before,
+  .profile-media,
+  .profile-img,
+  .profile-info-card,
+  .profile-section-card,
+  .profile-list-item,
+  .related-card,
+  .related-photo {
+    transition: none;
+  }
+}

@@ -1,0 +1,438 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.dentists-page {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  overflow-x: hidden;
+}
+
+.dentists-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Shared Typography & Eyebrow ===== */
+.dentists-eyebrow {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 2px 10px -4px rgba(31, 38, 36, 0.08);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.dentists-eyebrow:hover {
+  border-color: var(--dental-accent);
+}
+
+.dentists-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(185, 155, 114, 0.22);
+}
+
+.dentists-hero-title {
+  color: var(--dental-primary);
+  font-size: clamp(1.875rem, 3.2vw + 1rem, 3.375rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.dentists-section-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.45rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.dentists-intro {
+  color: var(--dental-primary);
+  opacity: 0.9;
+}
+
+.dentists-subintro {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+/* ===== Shared Buttons ===== */
+.dentists-btn {
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease;
+}
+
+.dentists-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1px solid var(--dental-primary);
+  box-shadow: 0 8px 18px -10px rgba(31, 38, 36, 0.4);
+}
+
+.dentists-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -10px rgba(31, 38, 36, 0.48);
+}
+
+.dentists-btn-secondary {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.dentists-btn-secondary:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -12px rgba(185, 155, 114, 0.45);
+}
+
+/* ===== 5.1 Page Hero ===== */
+.dentists-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(240px, 34vw, 420px);
+  background: radial-gradient(
+    ellipse 80% 70% at 75% 15%,
+    var(--dental-accent-soft),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dentists-hero-media {
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 20px 45px -20px rgba(31, 38, 36, 0.16);
+  transition:
+    border-color 0.35s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.dentists-hero-media:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-4px);
+  box-shadow:
+    0 26px 54px -20px rgba(31, 38, 36, 0.22),
+    0 0 0 4px rgba(185, 155, 114, 0.14);
+}
+
+.dentists-hero-img {
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dentists-hero-media:hover .dentists-hero-img {
+  transform: scale(1.03);
+}
+
+.dentists-hero-caption {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  background: rgba(252, 250, 246, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--dental-border);
+  border-radius: 0.875rem;
+  color: var(--dental-primary);
+}
+
+.dentists-caption-tag {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+/* ===== 5.3 Specializations ===== */
+.dentists-specializations {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.22) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.dentists-reset-btn {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  cursor: pointer;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.dentists-reset-btn:hover {
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+}
+
+.specialty-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 6px 18px -14px rgba(31, 38, 36, 0.12);
+  cursor: pointer;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.28s ease;
+}
+
+.specialty-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 14px 28px -16px rgba(31, 38, 36, 0.18),
+    0 0 0 3px rgba(185, 155, 114, 0.12);
+}
+
+.specialty-card.is-active {
+  border: 1.5px solid var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+  box-shadow:
+    0 14px 28px -16px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.18);
+}
+
+.specialty-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background-color: var(--dental-border);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.specialty-card:hover .specialty-dot,
+.specialty-card.is-active .specialty-dot {
+  background-color: var(--dental-accent);
+  transform: scale(1.25);
+}
+
+/* ===== 5.2 Dentist Listing ===== */
+.dentists-listing {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.dentist-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 10px 28px -18px rgba(31, 38, 36, 0.14);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.dentist-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 22px 40px -18px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.dentist-photo-wrap {
+  aspect-ratio: 3 / 4;
+  background-color: var(--dental-accent-soft);
+  border-bottom: 1px solid var(--dental-border);
+}
+
+@media (min-width: 640px) {
+  .dentist-photo-wrap {
+    border-bottom: 0;
+    border-right: 1px solid var(--dental-border);
+    min-height: 100%;
+  }
+}
+
+.dentist-photo {
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dentist-card:hover .dentist-photo {
+  transform: scale(1.04);
+}
+
+.dentist-exp-badge {
+  position: absolute;
+  left: 0.65rem;
+  bottom: 0.65rem;
+  background: rgba(252, 250, 246, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.dentist-designation {
+  color: var(--dental-primary);
+  opacity: 0.82;
+}
+
+.dentist-meta-box {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+/* ===== 5.4 Professional Credentials ===== */
+.dentists-credentials {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.2) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.cred-tab-btn {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cred-tab-btn:hover {
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+  transform: translateY(-1px);
+}
+
+.cred-tab-btn.is-active {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border-color: var(--dental-primary);
+}
+
+.cred-panel {
+  background-color: var(--dental-accent-soft);
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 18px 40px -22px rgba(31, 38, 36, 0.16);
+}
+
+.cred-panel-header {
+  border-color: var(--dental-border);
+}
+
+.cred-item-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.cred-item-card:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -16px rgba(31, 38, 36, 0.18);
+}
+
+.cred-label {
+  color: var(--dental-primary);
+  opacity: 0.72;
+}
+
+/* ===== 5.5 CTA ===== */
+.dentists-cta {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.dentists-cta-banner {
+  background: linear-gradient(
+    135deg,
+    var(--dental-accent-soft) 0%,
+    rgba(220, 234, 229, 0.42) 100%
+  );
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 20px 44px -22px rgba(31, 38, 36, 0.18);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dentists-cta-banner:hover {
+  border-color: var(--dental-accent);
+  box-shadow:
+    0 24px 50px -22px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.12);
+}
+
+.dentists-cta-eyebrow {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+/* ===== Accessibility & Responsive Breakpoints ===== */
+.dentists-page a:focus-visible,
+.dentists-page button:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+  .dentists-btn {
+    width: 100%;
+  }
+
+  .dentist-card:hover,
+  .specialty-card:hover,
+  .cred-item-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .dentists-container {
+    max-width: 82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dentists-eyebrow,
+  .dentists-btn,
+  .dentists-hero-media,
+  .dentists-hero-img,
+  .dentists-reset-btn,
+  .specialty-card,
+  .specialty-dot,
+  .dentist-card,
+  .dentist-photo,
+  .cred-tab-btn,
+  .cred-item-card,
+  .dentists-cta-banner {
+    transition: none;
+  }
+}
