@@ -1,0 +1,233 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.bp-page {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  overflow-x: hidden;
+}
+
+.bp-container {
+  position: relative;
+  z-index: 1;
+}
+
+.bp-intro {
+  color: var(--dental-primary);
+  opacity: 0.9;
+}
+
+.bp-subintro {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.bp-kicker {
+  color: var(--dental-primary);
+  opacity: 0.72;
+}
+
+.bp-back-link {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  text-decoration: none;
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.bp-back-link:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateX(-2px);
+}
+
+.bp-cat-pill {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.bp-title {
+  color: var(--dental-primary);
+  font-size: clamp(1.75rem, 3vw + 0.9rem, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.bp-meta-bar {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+.bp-cover-media {
+  aspect-ratio: 16 / 9;
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 20px 44px -22px rgba(31, 38, 36, 0.18);
+}
+
+.bp-body {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.16) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.bp-toc-card,
+.bp-treatments-box,
+.bp-references-box {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+}
+
+.bp-toc-link {
+  color: var(--dental-primary);
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.bp-toc-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.bp-treatment-link {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+  text-decoration: none;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.bp-treatment-link:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-1px);
+}
+
+.bp-disclaimer-box {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  border-left: 4px solid var(--dental-accent);
+}
+
+.bp-inline-media {
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--dental-border);
+}
+
+.bp-inline-caption {
+  background-color: var(--dental-accent-soft);
+  border-top: 1px solid var(--dental-border);
+}
+
+.bp-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+}
+
+.bp-cta-banner {
+  background: linear-gradient(
+    135deg,
+    var(--dental-accent-soft) 0%,
+    rgba(220, 234, 229, 0.42) 100%
+  );
+  border: 1.5px solid var(--dental-border);
+}
+
+.bp-related {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.bp-related-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bp-related-card:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px -18px rgba(31, 38, 36, 0.2);
+}
+
+.bp-related-media {
+  aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--dental-border);
+}
+
+.bp-btn {
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.bp-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1px solid var(--dental-primary);
+}
+
+.bp-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+  transform: translateY(-2px);
+}
+
+.bp-btn-secondary {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.bp-btn-secondary:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.bp-not-found {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+.bp-page a:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+  .bp-cover-media,
+  .bp-inline-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .bp-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .bp-container {
+    max-width: 82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bp-back-link,
+  .bp-treatment-link,
+  .bp-related-card,
+  .bp-btn {
+    transition: none;
+  }
+}

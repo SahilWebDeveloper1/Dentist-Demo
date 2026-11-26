@@ -14,6 +14,8 @@ import BlogPost from './pages/BlogPost';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import BookingConfirmation from './pages/BookingConfirmation';
+import MedicalDisclaimer from './pages/MedicalDisclaimer';
+import NotFound from './pages/NotFound';
 
 export {
     Home,
@@ -32,4 +34,6 @@ export {
     PrivacyPolicy,
     TermsAndConditions,
     BookingConfirmation,
+    MedicalDisclaimer,
+    NotFound
 };

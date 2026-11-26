@@ -1,0 +1,288 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.contact-page {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  overflow-x: hidden;
+}
+
+.contact-container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-intro {
+  color: var(--dental-primary);
+  opacity: 0.9;
+}
+
+.contact-subintro {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.contact-kicker {
+  color: var(--dental-primary);
+  opacity: 0.72;
+}
+
+.contact-divider {
+  border-color: var(--dental-border);
+}
+
+.contact-eyebrow {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.contact-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  flex-shrink: 0;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(220px, 32vw, 380px);
+  background: radial-gradient(
+    ellipse 80% 70% at 75% 15%,
+    var(--dental-accent-soft),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-hero-title {
+  color: var(--dental-primary);
+  font-size: clamp(1.875rem, 3.2vw + 1rem, 3.375rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.contact-section-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.45rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.contact-hero-media {
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 20px 45px -20px rgba(31, 38, 36, 0.16);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-hero-media:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-4px);
+}
+
+.contact-hero-img {
+  display: block;
+}
+
+.contact-hero-caption {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  background: rgba(252, 250, 246, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--dental-border);
+  border-radius: 0.875rem;
+}
+
+.contact-caption-tag {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+/* ===== Details & Opening Hours ===== */
+.contact-details {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.2) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.contact-info-card,
+.contact-hours-card,
+.contact-map-card,
+.contact-form-card {
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 16px 36px -22px rgba(31, 38, 36, 0.14);
+}
+
+.contact-info-row {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+.contact-social-pill {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  text-decoration: none;
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.contact-social-pill:hover {
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+  transform: translateY(-2px);
+}
+
+.contact-break-pill {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+.contact-notice-box {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  border-left: 4px solid var(--dental-accent);
+}
+
+/* ===== Map & Contact Form ===== */
+.contact-map-form {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.contact-map-frame {
+  border: 1px solid var(--dental-border);
+  background-color: var(--dental-accent-soft);
+}
+
+.contact-success-banner {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-accent);
+  border-left: 4px solid var(--dental-accent);
+}
+
+.contact-input {
+  background-color: #ffffff;
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: var(--dental-accent);
+  box-shadow: 0 0 0 3px rgba(185, 155, 114, 0.16);
+}
+
+.contact-checkbox {
+  accent-color: var(--dental-primary);
+}
+
+/* ===== Additional Info ===== */
+.contact-extra {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.18) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.contact-extra-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-extra-card:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px -18px rgba(31, 38, 36, 0.18);
+}
+
+.contact-emergency-card {
+  background-color: var(--dental-accent-soft);
+  border-left: 4px solid var(--dental-accent);
+}
+
+/* ===== Buttons ===== */
+.contact-btn {
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1px solid var(--dental-primary);
+}
+
+.contact-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+  transform: translateY(-2px);
+}
+
+.contact-btn-secondary {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.contact-btn-secondary:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.contact-page a:focus-visible,
+.contact-page button:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+  .contact-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .contact-container {
+    max-width: 82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-hero-media,
+  .contact-social-pill,
+  .contact-extra-card,
+  .contact-btn {
+    transition: none;
+  }
+}

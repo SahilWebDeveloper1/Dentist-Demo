@@ -1,7 +1,8 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './layout/Layout'
-import { AboutUs, Blog, BlogPost, BookAppointment, BookingConfirmation, ContactUs, DentalTreatments, DentistProfile, FAQs, Home, OurDentists, PatientReviews, PrivacyPolicy, SmileGallery, TermsAndConditions, TreatmentDetail } from './Pages'
+import { AboutUs, Blog, BlogPost, BookAppointment, BookingConfirmation, ContactUs, DentalTreatments, DentistProfile, FAQs, Home, OurDentists, PatientReviews, PrivacyPolicy, SmileGallery, TermsAndConditions, TreatmentDetail,MedicalDisclaimer,NotFound } from './Pages'
+import FloatingCallButton from "./components/FloatingCallButton";
 
 const App = () => {
   return (
@@ -21,9 +22,13 @@ const App = () => {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
       <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+      <Route path="*" element={<NotFound />} />
+
     </Routes>
+    <FloatingCallButton phoneNumber="+919810000000" displayLabel="Call Clinic" />
     </Layout>
   )
 }

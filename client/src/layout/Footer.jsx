@@ -278,6 +278,9 @@ function Footer({
             <Link to="/terms-and-conditions" className="footer-legal-link">
               Terms &amp; Conditions
             </Link>
+            <Link to="/medical-disclaimer" className="footer-legal-link">
+              Medical Disclaimer
+            </Link>
           </div>
         </div>
       </div>

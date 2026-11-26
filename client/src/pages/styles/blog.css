@@ -1,0 +1,272 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.blog-page {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  overflow-x: hidden;
+}
+
+.blog-container {
+  position: relative;
+  z-index: 1;
+}
+
+.blog-intro {
+  color: var(--dental-primary);
+  opacity: 0.9;
+}
+
+.blog-subintro {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.blog-divider {
+  border-color: var(--dental-border);
+}
+
+.blog-eyebrow {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.blog-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  flex-shrink: 0;
+}
+
+.blog-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(200px, 28vw, 340px);
+  background: radial-gradient(
+    ellipse 80% 70% at 75% 15%,
+    var(--dental-accent-soft),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blog-hero-title {
+  color: var(--dental-primary);
+  font-size: clamp(1.875rem, 3.2vw + 1rem, 3.375rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.blog-section-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.45rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.blog-search-input {
+  background-color: #ffffff;
+  color: var(--dental-primary);
+  border: 1.5px solid var(--dental-border);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.blog-search-input:focus {
+  outline: none;
+  border-color: var(--dental-accent);
+  box-shadow: 0 0 0 4px rgba(185, 155, 114, 0.16);
+}
+
+.blog-search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dental-primary);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ===== Featured Article ===== */
+.blog-featured-card {
+  background-color: var(--dental-accent-soft);
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 20px 44px -22px rgba(31, 38, 36, 0.16);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-featured-card:hover {
+  border-color: var(--dental-accent);
+}
+
+.blog-featured-media {
+  aspect-ratio: 4 / 3;
+  height: 100%;
+  background-color: var(--dental-bg);
+}
+
+.blog-featured-img {
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.blog-featured-card:hover .blog-featured-img {
+  transform: scale(1.03);
+}
+
+.blog-featured-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  background: rgba(252, 250, 246, 0.94);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.blog-cat-pill {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+/* ===== Categories & Listing ===== */
+.blog-listing {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.18) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.blog-cat-tab {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.blog-cat-tab:hover {
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+  transform: translateY(-1px);
+}
+
+.blog-cat-tab.is-active {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border-color: var(--dental-primary);
+}
+
+.blog-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 10px 26px -18px rgba(31, 38, 36, 0.14);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 22px 40px -18px rgba(31, 38, 36, 0.22),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.blog-card-media {
+  aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--dental-border);
+  background-color: var(--dental-accent-soft);
+}
+
+.blog-card-img {
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.blog-card:hover .blog-card-img {
+  transform: scale(1.045);
+}
+
+.blog-card-cat {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: rgba(252, 250, 246, 0.94);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.blog-empty {
+  background-color: var(--dental-accent-soft);
+  border: 1.5px solid var(--dental-border);
+}
+
+.blog-btn {
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.blog-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1px solid var(--dental-primary);
+}
+
+.blog-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+  transform: translateY(-2px);
+}
+
+.blog-btn-secondary {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.blog-btn-secondary:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.blog-page a:focus-visible,
+.blog-page button:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 3px;
+}
+
+@media (min-width: 1440px) {
+  .blog-container {
+    max-width: 82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-featured-img,
+  .blog-cat-tab,
+  .blog-card,
+  .blog-card-img,
+  .blog-btn {
+    transition: none;
+  }
+}

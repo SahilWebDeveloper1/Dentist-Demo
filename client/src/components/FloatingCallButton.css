@@ -1,0 +1,70 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.floating-call-btn {
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1.5px solid var(--dental-accent);
+  text-decoration: none;
+  box-shadow:
+    0 14px 30px -10px rgba(20, 25, 24, 0.45),
+    0 0 0 3px rgba(185, 155, 114, 0.16);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease;
+}
+
+.floating-call-btn:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-accent);
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 36px -10px rgba(20, 25, 24, 0.55),
+    0 0 0 5px rgba(185, 155, 114, 0.26);
+}
+
+.floating-call-btn:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 4px;
+}
+
+.floating-call-icon {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: transform 0.25s ease;
+}
+
+.floating-call-btn:hover .floating-call-icon {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+@media (min-width: 640px) {
+  .floating-call-btn {
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .floating-call-btn {
+    padding: 0.625rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-call-btn,
+  .floating-call-icon {
+    transition: none;
+  }
+}

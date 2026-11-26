@@ -1,0 +1,226 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.book-page {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  overflow-x: hidden;
+}
+
+.book-container {
+  position: relative;
+  z-index: 1;
+}
+
+.book-intro {
+  color: var(--dental-primary);
+  opacity: 0.9;
+}
+
+.book-subintro {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.book-kicker {
+  color: var(--dental-primary);
+  opacity: 0.72;
+}
+
+.book-divider {
+  border-color: var(--dental-border);
+}
+
+.book-eyebrow {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.book-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  flex-shrink: 0;
+}
+
+.book-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(200px, 28vw, 340px);
+  background: radial-gradient(
+    ellipse 80% 70% at 75% 15%,
+    var(--dental-accent-soft),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.book-hero-title {
+  color: var(--dental-primary);
+  font-size: clamp(1.875rem, 3.2vw + 1rem, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.book-quick-contact {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+.book-main {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.18) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.book-form-card,
+.book-confirm-card {
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 18px 40px -22px rgba(31, 38, 36, 0.16);
+}
+
+.book-input {
+  background-color: #ffffff;
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.book-input:focus {
+  outline: none;
+  border-color: var(--dental-accent);
+  box-shadow: 0 0 0 3px rgba(185, 155, 114, 0.16);
+}
+
+.book-toggle-pill,
+.book-slot-pill {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.book-toggle-pill:hover,
+.book-slot-pill:hover {
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+}
+
+.book-toggle-pill.is-active,
+.book-slot-pill.is-active {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border-color: var(--dental-primary);
+}
+
+.book-checkbox {
+  accent-color: var(--dental-primary);
+}
+
+.book-info-card {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  border-left: 4px solid var(--dental-accent);
+}
+
+.book-policy-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 10px 26px -18px rgba(31, 38, 36, 0.12);
+}
+
+.book-status-badge {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-accent);
+  color: var(--dental-primary);
+}
+
+.book-ref-box,
+.book-summary-box {
+  background-color: #ffffff;
+  border: 1px solid var(--dental-border);
+}
+
+.book-next-box {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+.book-btn {
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.book-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1px solid var(--dental-primary);
+}
+
+.book-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+  transform: translateY(-2px);
+}
+
+.book-btn-secondary {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.book-btn-secondary:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.book-page a:focus-visible,
+.book-page button:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+  .book-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .book-container {
+    max-width: 82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-toggle-pill,
+  .book-slot-pill,
+  .book-btn {
+    transition: none;
+  }
+}

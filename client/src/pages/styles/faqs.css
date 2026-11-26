@@ -1,0 +1,216 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.faqs-page {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  overflow-x: hidden;
+}
+
+.faqs-container {
+  position: relative;
+  z-index: 1;
+}
+
+.faqs-intro {
+  color: var(--dental-primary);
+  opacity: 0.9;
+}
+
+.faqs-subintro {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.faqs-divider {
+  border-color: var(--dental-border);
+}
+
+.faqs-eyebrow {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.faqs-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  flex-shrink: 0;
+}
+
+.faqs-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(200px, 28vw, 340px);
+  background: radial-gradient(
+    ellipse 80% 70% at 75% 15%,
+    var(--dental-accent-soft),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.faqs-hero-title {
+  color: var(--dental-primary);
+  font-size: clamp(1.875rem, 3.2vw + 1rem, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.faqs-search-input {
+  background-color: #ffffff;
+  color: var(--dental-primary);
+  border: 1.5px solid var(--dental-border);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faqs-search-input:focus {
+  outline: none;
+  border-color: var(--dental-accent);
+  box-shadow: 0 0 0 4px rgba(185, 155, 114, 0.16);
+}
+
+.faqs-search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dental-primary);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.faqs-tab-pill {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.faqs-tab-pill:hover {
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+  transform: translateY(-1px);
+}
+
+.faqs-tab-pill.is-active {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border-color: var(--dental-primary);
+}
+
+.faqs-body {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.18) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.faqs-category-block {
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 14px 32px -20px rgba(31, 38, 36, 0.14);
+}
+
+.faqs-count-pill {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+.faqs-emergency-alert {
+  background-color: var(--dental-accent-soft);
+  border: 1.5px solid var(--dental-accent);
+  border-left: 4px solid var(--dental-primary);
+}
+
+.faqs-item {
+  background-color: #ffffff;
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease;
+}
+
+.faqs-item:hover {
+  border-color: var(--dental-accent);
+}
+
+.faqs-item-btn {
+  background: transparent;
+  color: var(--dental-primary);
+  cursor: pointer;
+}
+
+.faqs-empty,
+.faqs-cta-banner {
+  background-color: var(--dental-accent-soft);
+  border: 1.5px solid var(--dental-border);
+}
+
+.faqs-btn {
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.faqs-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1px solid var(--dental-primary);
+}
+
+.faqs-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+  transform: translateY(-2px);
+}
+
+.faqs-btn-secondary {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.faqs-btn-secondary:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.faqs-page a:focus-visible,
+.faqs-page button:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+  .faqs-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .faqs-container {
+    max-width: 82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faqs-tab-pill,
+  .faqs-item,
+  .faqs-btn {
+    transition: none;
+  }
+}
