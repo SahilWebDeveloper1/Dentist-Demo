@@ -1,0 +1,320 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.reviews-page {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  overflow-x: hidden;
+}
+
+.reviews-container {
+  position: relative;
+  z-index: 1;
+}
+
+.reviews-intro {
+  color: var(--dental-primary);
+  opacity: 0.9;
+}
+
+.reviews-subintro {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.reviews-kicker {
+  color: var(--dental-primary);
+  opacity: 0.72;
+}
+
+.reviews-eyebrow {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.reviews-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  flex-shrink: 0;
+}
+
+.reviews-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(200px, 28vw, 340px);
+  background: radial-gradient(
+    ellipse 80% 70% at 75% 15%,
+    var(--dental-accent-soft),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reviews-hero-title {
+  color: var(--dental-primary);
+  font-size: clamp(1.875rem, 3.2vw + 1rem, 3.375rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.reviews-section-heading {
+  color: var(--dental-primary);
+  font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.45rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.reviews-summary-card {
+  background-color: var(--dental-accent-soft);
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 18px 40px -22px rgba(31, 38, 36, 0.16);
+}
+
+.reviews-divider {
+  border-color: var(--dental-border);
+}
+
+.reviews-platform-chip {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  text-decoration: none;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.reviews-platform-chip:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-1px);
+}
+
+.rev-star-filled {
+  color: var(--dental-accent);
+}
+
+.rev-star-empty {
+  color: var(--dental-border);
+}
+
+/* ===== Listing & Filters ===== */
+.reviews-listing {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.18) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.reviews-filter-pill {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.reviews-filter-pill:hover {
+  border-color: var(--dental-accent);
+  background-color: var(--dental-accent-soft);
+  transform: translateY(-1px);
+}
+
+.reviews-filter-pill.is-active {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border-color: var(--dental-primary);
+}
+
+.review-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 10px 26px -18px rgba(31, 38, 36, 0.12);
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow:
+    0 20px 36px -18px rgba(31, 38, 36, 0.2),
+    0 0 0 3px rgba(185, 155, 114, 0.14);
+}
+
+.review-cat-pill {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+/* ===== External Platforms ===== */
+.reviews-external {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.external-platform-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+  text-decoration: none;
+  box-shadow: 0 8px 22px -15px rgba(31, 38, 36, 0.12);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.external-platform-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  box-shadow: 0 18px 34px -18px rgba(31, 38, 36, 0.2);
+}
+
+/* ===== Submit Feedback Form ===== */
+.reviews-submit {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.2) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.reviews-form-card {
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 18px 40px -22px rgba(31, 38, 36, 0.16);
+}
+
+.reviews-success-banner {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-accent);
+  border-left: 4px solid var(--dental-accent);
+}
+
+.reviews-input {
+  background-color: #ffffff;
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.reviews-input:focus {
+  outline: none;
+  border-color: var(--dental-accent);
+  box-shadow: 0 0 0 3px rgba(185, 155, 114, 0.16);
+}
+
+.rating-select-btn {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.rating-select-btn.is-selected {
+  background-color: var(--dental-accent-soft);
+  border-color: var(--dental-accent);
+}
+
+.reviews-checkbox {
+  accent-color: var(--dental-primary);
+}
+
+/* ===== Buttons & CTA ===== */
+.reviews-btn {
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.reviews-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1px solid var(--dental-primary);
+}
+
+.reviews-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+  transform: translateY(-2px);
+}
+
+.reviews-btn-secondary {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.reviews-btn-secondary:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.reviews-cta {
+  border-top: 1px solid var(--dental-border);
+  background-color: var(--dental-bg);
+}
+
+.reviews-cta-banner {
+  background: linear-gradient(
+    135deg,
+    var(--dental-accent-soft) 0%,
+    rgba(220, 234, 229, 0.42) 100%
+  );
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 20px 44px -22px rgba(31, 38, 36, 0.18);
+}
+
+.reviews-page a:focus-visible,
+.reviews-page button:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+  .reviews-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .reviews-container {
+    max-width: 82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-platform-chip,
+  .reviews-filter-pill,
+  .review-card,
+  .external-platform-card,
+  .reviews-btn {
+    transition: none;
+  }
+}
