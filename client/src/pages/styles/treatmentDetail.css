@@ -1,0 +1,266 @@
+:root {
+  --dental-primary: #1F2624;
+  --dental-primary-hover: #141918;
+  --dental-bg: #FCFAF6;
+  --dental-accent: #B99B72;
+  --dental-accent-soft: rgba(220, 234, 229, 0.65);
+  --dental-border: rgba(185, 155, 114, 0.3);
+}
+
+.td-page {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  overflow-x: hidden;
+}
+
+.td-container {
+  position: relative;
+  z-index: 1;
+}
+
+.td-intro {
+  color: var(--dental-primary);
+  opacity: 0.9;
+}
+
+.td-subintro {
+  color: var(--dental-primary);
+  opacity: 0.78;
+}
+
+.td-kicker {
+  color: var(--dental-primary);
+  opacity: 0.72;
+}
+
+.td-back-link,
+.td-eyebrow {
+  background-color: var(--dental-accent-soft);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+  text-decoration: none;
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.td-back-link:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateX(-2px);
+}
+
+.td-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+  flex-shrink: 0;
+}
+
+.td-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(220px, 32vw, 380px);
+  background: radial-gradient(
+    ellipse 80% 70% at 75% 15%,
+    var(--dental-accent-soft),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.td-hero-title {
+  color: var(--dental-primary);
+  font-size: clamp(1.875rem, 3.2vw + 1rem, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.td-review-note {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  border-left: 4px solid var(--dental-accent);
+}
+
+.td-hero-media {
+  background-color: var(--dental-bg);
+  border: 1.5px solid var(--dental-border);
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 20px 45px -20px rgba(31, 38, 36, 0.16);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.td-hero-media:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-4px);
+}
+
+.td-hero-img {
+  display: block;
+}
+
+.td-btn {
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease;
+}
+
+.td-btn-primary {
+  background-color: var(--dental-primary);
+  color: var(--dental-bg);
+  border: 1px solid var(--dental-primary);
+  box-shadow: 0 8px 18px -10px rgba(31, 38, 36, 0.4);
+}
+
+.td-btn-primary:hover {
+  background-color: var(--dental-primary-hover);
+  border-color: var(--dental-primary-hover);
+  transform: translateY(-2px);
+}
+
+.td-btn-secondary {
+  background-color: var(--dental-bg);
+  color: var(--dental-primary);
+  border: 1px solid var(--dental-border);
+}
+
+.td-btn-secondary:hover {
+  border-color: var(--dental-accent);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.td-body {
+  border-top: 1px solid var(--dental-border);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 234, 229, 0.18) 0%,
+    var(--dental-bg) 100%
+  );
+}
+
+.td-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  box-shadow: 0 10px 26px -18px rgba(31, 38, 36, 0.12);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.td-card:hover {
+  border-color: var(--dental-accent);
+  box-shadow: 0 16px 34px -18px rgba(31, 38, 36, 0.18);
+}
+
+.td-card-soft {
+  background-color: var(--dental-accent-soft);
+}
+
+.td-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--dental-accent);
+}
+
+.td-step-box,
+.td-case-box {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.td-step-box:hover,
+.td-case-box:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-2px);
+}
+
+.td-step-pill {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  color: var(--dental-primary);
+}
+
+.td-faq-item {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+.td-faq-btn {
+  background: transparent;
+  color: var(--dental-primary);
+  cursor: pointer;
+}
+
+.td-dentist-avatar {
+  width: 76px;
+  height: 92px;
+  border: 1.5px solid var(--dental-border);
+}
+
+.td-related-card {
+  background-color: var(--dental-bg);
+  border: 1px solid var(--dental-border);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.td-related-card:hover {
+  border-color: var(--dental-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px -18px rgba(31, 38, 36, 0.2);
+}
+
+.td-related-media {
+  aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--dental-border);
+}
+
+.td-cta-banner {
+  background: linear-gradient(
+    135deg,
+    var(--dental-accent-soft) 0%,
+    rgba(220, 234, 229, 0.42) 100%
+  );
+  border: 1.5px solid var(--dental-border);
+  box-shadow: 0 20px 44px -22px rgba(31, 38, 36, 0.18);
+}
+
+.td-not-found {
+  background-color: var(--dental-accent-soft);
+  border: 1px solid var(--dental-border);
+}
+
+.td-page a:focus-visible,
+.td-page button:focus-visible {
+  outline: 2px solid var(--dental-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+  .td-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .td-container {
+    max-width: 82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .td-back-link,
+  .td-hero-media,
+  .td-btn,
+  .td-card,
+  .td-step-box,
+  .td-case-box,
+  .td-related-card {
+    transition: none;
+  }
+}
